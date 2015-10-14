@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  min_to_campus: 1
+  num_cars: 1
+  car_type: MyString
+
+two:
+  user_id: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  min_to_campus: 1
+  num_cars: 1
+  car_type: MyString
