@@ -43,6 +43,9 @@ gem 'foundation-rails', '5.4.3.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Picture for Location
+gem 'carrierwave'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
