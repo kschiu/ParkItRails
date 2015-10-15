@@ -1,0 +1,11 @@
+<%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :email %>
+  
+  <div class="form-actions">
+    <%= f.submit nil, class: 'button radius' %>
+  </div>
+<% end %>

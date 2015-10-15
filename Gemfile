@@ -41,7 +41,7 @@ gem 'nested_form'
 gem 'foundation-rails', '5.4.3.1'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
