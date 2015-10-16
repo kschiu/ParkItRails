@@ -5,6 +5,9 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    if logged_in?
+      @my_locations = Location.where(user_id: current_user.id)
+    end
   end
 
   # GET /locations/1
@@ -25,7 +28,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-
+    @location.user_id = current_user.id
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
