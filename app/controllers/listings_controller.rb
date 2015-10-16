@@ -7,6 +7,10 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+  def myListings
+    @my_listings = Listing.where(user_id: current_user.id)
+  end    
+
   # GET /listings/1
   # GET /listings/1.json
   def show
@@ -15,6 +19,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @myLocs = Location.where(current_user.id).collect{ |u| [u.street_address, u.id] } if logged_in?
   end
 
   # GET /listings/1/edit
@@ -25,7 +30,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-
+    @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -69,6 +74,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:user_id, :location_id, :half_day, :full_day, :week, :month, :startDateTime, :endDateTime, :active)
+      params.require(:listing).permit(:user_id, :location_id, :half_day, :full_day, :week, :month, :startDateTime, :endDateTime, :active, :min_to_campus)
     end
 end
