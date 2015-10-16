@@ -7,4 +7,6 @@ class Listing < ActiveRecord::Base
 	validates_date :startDateTime, :endDateTime
 
 	scope :active, -> { where(active: true) }
+	scope :chronological, -> { order('startDateTime','endDateTime') }
+	scope :closest, -> { order('min_to_campus') }
 end
