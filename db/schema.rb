@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015233931) do
+ActiveRecord::Schema.define(version: 20151016000115) do
 
   create_table "cars", force: true do |t|
     t.integer  "purchase_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151015233931) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "min_to_campus"
   end
 
   create_table "locations", force: true do |t|
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(version: 20151015233931) do
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
-    t.integer  "min_to_campus"
     t.integer  "num_cars"
     t.string   "car_type"
     t.datetime "created_at"

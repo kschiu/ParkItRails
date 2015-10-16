@@ -9,5 +9,5 @@ mount_uploader :photo, PhotoUploader
 	validates_numericality_of :num_cars, only_integer: true, greater_than: 0
 
 	scope :active, -> { where(active: true) }
-	
+
 end
