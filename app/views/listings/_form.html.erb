@@ -11,34 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
     <%= f.input :location_id, collection: @myLocs, prompt: "Select Location..." %>
-  </div>
-  <div class="field">
-    <%= f.input :half_day %>
-  </div>
-  <div class="field">
-    <%= f.input :full_day %>
-  </div>
-  <div class="field">
-    <%= f.input :week %>
-  </div>
-  <div class="field">
-    <%= f.input :month %>
-  </div>
-  <div class="field">
+    <%= f.input :space_type, collection: [['Street','Street'],['Driveway','Driveway'], ['Garage', 'Garage']], prompt: "Select space type..." %>
+    <%= f.input :half_day, label: "Half-Day Rate ($)" %>
+    <%= f.input :full_day, label: "Day Rate ($)" %>
+    <%= f.input :week, label: "Week Rate ($)" %>
+    <%= f.input :month, label: "Month Rate ($)" %>
     <%= f.input :min_to_campus %>
-  </div>
-  <div class="field">
-    <%= f.input :startDateTime %>
-  </div>
-  <div class="field">
-    <%= f.input :endDateTime %>
-  </div>
-  <div class="field">
+    <%= f.input :startDateTime, label: "Start Date and Time" %>
+    <%= f.input :endDateTime, label: "End Date and Time"%>
     <%= f.input :active %><br>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button radius small expand'%>
   </div>
 <% end %>

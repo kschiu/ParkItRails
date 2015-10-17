@@ -450,7 +450,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: #2f56a6;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1451,7 +1451,7 @@ body {
     background-color: #FFF;
 }
 
-a, h1,h2,h3,h4,h5,h6 {
+a, h1,h2,h3,h4,h5,h6, p {
 	font-family: 'Source Sans Pro',sans-serif !important; 
 }
 
@@ -1460,4 +1460,16 @@ a, h1,h2,h3,h4,h5,h6 {
 }
 .name > a:hover {
 	background-color: transparent;
+}
+
+.smallHeading {
+	font-size: 14px;
+}
+
+.smallSubHeading {
+	font-size: 12px;
+}
+
+.gray {
+	color: #909090 ;
 }
