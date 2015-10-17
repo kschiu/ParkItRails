@@ -1,3 +1,7 @@
+<div id="showImg">
+ <img><%= image_tag @location.photo_url(:thumb) if @location.photo? %> 
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -31,4 +35,6 @@
 </p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to 'Back', locations_path %> |
+<%= link_to 'Destroy', locations_path , method: :delete, data: { confirm: 'Are you sure?' } %>
+

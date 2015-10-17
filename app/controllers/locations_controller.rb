@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+  class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -13,6 +13,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @location = Location.find(params[:id])
   end
 
   # GET /locations/new
@@ -22,13 +23,15 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    @location = Location.find(params[:id])
   end
+
 
   # POST /locations
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-    @location.user_id = current_user.id
+    # @location.user_id = current_user.id
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }

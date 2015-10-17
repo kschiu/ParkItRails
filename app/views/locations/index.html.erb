@@ -1,34 +1,26 @@
-<h1>Listing locations</h1>
+<h2>My Locations</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip code</th>
-      <th>Num cars</th>
-      <th>Car type</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="locationContent">
 
-  <tbody>
+<ul class = "no-bullet">
     <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.street_address %></td>
-        <td><%= location.city %></td>
-        <td><%= location.state %></td>
-        <td><%= location.zip_code %></td>
-        <td><%= location.num_cars %></td>
-        <td><%= location.car_type %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <%= link_to location do %> 
+            <div class="locationContainer" >
+            <img>  <%= image_tag location.photo_url(:thumb) if location.photo? %> </img>
+            <h6 ><%= location.street_address %></h6>
+            <p><%= location.city %></p>   
+            </div>        
+            <%end%>
+          
+    <%end%>
 
+
+</ul>
+
+
+
+<%= link_to 'New Location', new_location_path%>
+
+</div>
 <br>
 
-<%= link_to 'New Location', new_location_path %>
