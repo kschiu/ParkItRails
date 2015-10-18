@@ -3,24 +3,16 @@
 <table>
   <thead>
     <tr>
-      <th>Buyer</th>
-      <th>Seller</th>
-      <th>Listing</th>
       <th>Date</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @purchases.each do |purchase| %>
       <tr>
-        <td><%= purchase.buyer_id %></td>
-        <td><%= purchase.seller_id %></td>
-        <td><%= purchase.listing_id %></td>
         <td><%= purchase.date %></td>
         <td><%= link_to 'Show', purchase %></td>
-        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-        <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

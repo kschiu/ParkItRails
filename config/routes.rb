@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'myListings' => 'listings#myListings', :as => :myListings
 
+
+  get 'listing/:id/detailed_listing' => 'home#detailed_listing', as: :detailed_listing
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,7 +5,6 @@
     <%= link_to 'New Listing', new_listing_path, class: 'button tiny radius secondary right' %>
   </div>
 </div>  
-
 <% @listings.each do |listing| %>
 <div class="row">
   <div class="small-5 columns">
@@ -14,12 +13,14 @@
     <% end %>
   </div>
   <div class="small-7 columns">
-    <span class="smallHeading"><strong><%= listing.location.street_address %></strong><br>
+    <span class="smallHeading"><strong><%= link_to listing.location.street_address, listing %></strong><br>
     <span class="smallSubHeading gray"><%= listing.space_type %></span><br><br>
     <%= link_to 'Edit', edit_listing_path(listing) %>
   </div>
   <hr>
 </div>
 <% end %>
+
+<br>
 
 
