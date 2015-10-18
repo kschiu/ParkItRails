@@ -1,34 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Half day:</strong>
-  $<%= @listing.half_day %>
-</p>
+  <div class="small-3 columns">
+    <%= link_to 'Back', listings_path, class: 'button tiny radius secondary right' %>
+  </div>
+  <div class="small-3 columns">
+    <%= link_to 'Edit', edit_listing_path(@listing), class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
 
-<p>
-  <strong>Full day:</strong>
-  $<%= @listing.full_day %>
-</p>
+<div class= "row">
+  <div class="small-12 columns">
+          <%= link_to image_tag(@listing.location.photo_url) if @listing.location.photo? %><br /><br />
+  </div>
+</div>
 
-<p>
-  <strong>Week:</strong>
-  $<%= @listing.week %>
-</p>
 
-<p>
-  <strong>Month:</strong>
-  $<%= @listing.month %>
-</p>
+<div class= "row">
+  <div class = "small-12 columns">
+    <p>
+      <strong>Half day:</strong>
+      $<%= @listing.half_day %>
+    </p>
 
-<p>
-  <strong>Start Date:</strong>
-  <%= @listing.startDateTime %>
-</p>
+    <p>
+      <strong>Full day:</strong>
+      $<%= @listing.full_day %>
+    </p>
 
-<p>
-  <strong>End Date:</strong>
-  <%= @listing.endDateTime %>
-</p>
+    <p>
+      <strong>Week:</strong>
+      $<%= @listing.week %>
+    </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+    <p>
+      <strong>Month:</strong>
+      $<%= @listing.month %>
+    </p>
+
+    <p>
+      <strong>Start Date:</strong>
+      <%= @listing.startDateTime.strftime("%b %-d %Y") %>
+    </p>
+
+    <p>
+      <strong>End Date:</strong>
+      <%= @listing.endDateTime.strftime("%b %-d %Y") %>
+    </p>
+  </div>
+</div>
+
