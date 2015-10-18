@@ -1,48 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @listing.location_id %>
-</p>
-
-<p>
   <strong>Half day:</strong>
-  <%= @listing.half_day %>
+  $<%= @listing.half_day %>
 </p>
 
 <p>
   <strong>Full day:</strong>
-  <%= @listing.full_day %>
+  $<%= @listing.full_day %>
 </p>
 
 <p>
   <strong>Week:</strong>
-  <%= @listing.week %>
+  $<%= @listing.week %>
 </p>
 
 <p>
   <strong>Month:</strong>
-  <%= @listing.month %>
+  $<%= @listing.month %>
 </p>
 
 <p>
-  <strong>Startdatetime:</strong>
+  <strong>Start Date:</strong>
   <%= @listing.startDateTime %>
 </p>
 
 <p>
-  <strong>Enddatetime:</strong>
+  <strong>End Date:</strong>
   <%= @listing.endDateTime %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @listing.active %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |

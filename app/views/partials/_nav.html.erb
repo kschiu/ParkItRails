@@ -10,9 +10,14 @@
       <section class="top-bar-section">
         <ul class= "right">
           <li><%= link_to 'Find Parking', home_path %></li> 
+          <% if logged_in? %>
           <li><%= link_to 'My Parkings', purchases_path %></li> 
           <li><%= link_to 'My Listings', listings_path %></li> 
           <li> <%= link_to 'My Locations', locations_path %> </li>
+            <li> <%= link_to 'Log Out', logout_path %> </li>
+          <% else %>
+            <li> <%= link_to 'Log In', login_path %> </li>
+          <% end %>
         </ul>
       </section>
     </nav>

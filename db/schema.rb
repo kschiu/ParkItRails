@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017054801) do
-
-  create_table "cars", force: true do |t|
-    t.integer  "purchase_id"
-    t.string   "make"
-    t.string   "model"
-    t.string   "license"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20151018174549) do
 
   create_table "listings", force: true do |t|
     t.integer  "user_id"
@@ -69,6 +60,9 @@ ActiveRecord::Schema.define(version: 20151017054801) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "make"
+    t.string   "model"
+    t.string   "license"
   end
 
   create_table "reviews", force: true do |t|
