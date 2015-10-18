@@ -35,7 +35,11 @@
     <%= f.label :car_type %><br>
     <%= f.text_field :car_type %>
   </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %><br />
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button radius small expand'%>
   </div>
 <% end %>

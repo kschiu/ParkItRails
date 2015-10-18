@@ -4,12 +4,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
-  end
-
-  def myListings
-    @my_listings = Listing.where(user_id: current_user.id)
-  end    
+    @listings = Listing.where(user_id: current_user.id)
+  end       
 
   # GET /listings/1
   # GET /listings/1.json
@@ -74,6 +70,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:user_id, :location_id, :half_day, :full_day, :week, :month, :startDateTime, :endDateTime, :active, :min_to_campus)
+      params.require(:listing).permit(:user_id, :location_id, :half_day, :full_day, :week, :month, :startDateTime, :endDateTime, :space_type, :active, :min_to_campus)
     end
 end

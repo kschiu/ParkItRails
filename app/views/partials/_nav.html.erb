@@ -10,14 +10,9 @@
       <section class="top-bar-section">
         <ul class= "right">
           <li><%= link_to 'Find Parking', home_path %></li> 
-          <li><%= link_to 'My Parkings', listings_path %></li> 
-          <li class="has-dropdown"> 
-              <%= link_to "Profile", home_path %>
-              <ul class= "dropdown">
-                <li><%= link_to 'My Listings', listings_path %></li> 
-                <li> <%= link_to 'My Locations', locations_path %> </li>
-              </ul>
-          </li>
+          <li><%= link_to 'My Parkings', purchases_path %></li> 
+          <li><%= link_to 'My Listings', listings_path %></li> 
+          <li> <%= link_to 'My Locations', locations_path %> </li>
         </ul>
       </section>
     </nav>
