@@ -4,4 +4,8 @@ class HomeController < ApplicationController
   	
     end
 
+    def detailed_listing
+    	@listing = Listing.find(params[:id])
+    end
+
 end

@@ -3,7 +3,7 @@
   <div class="small-12 columns">
     <div class= "overlay-container">
       <% unless listing.location.photo_url.nil? %>
-          <%= link_to image_tag(listing.location.photo_url), listing_path(listing) %><br />
+          <%= link_to image_tag(listing.location.photo_url), detailed_listing_path(:id => listing.id) %><br />
           <div class="overlay">$<%= listing.half_day %> HALF-DAY</div>
       <% end %>
     </div>

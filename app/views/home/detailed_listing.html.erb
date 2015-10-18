@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="small-12 columns">
+    <div class= "overlay-container">
+      <% unless @listing.location.photo_url.nil? %>
+          <%= image_tag(@listing.location.photo_url) %><br />
+          <div class="overlay">$<%= @listing.half_day %> HALF-DAY</div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns center">
+    <br>  
+    <span class="bigHeading"><strong><%= @listing.location.street_address %> | <%= @listing.space_type %></strong></span><br>
+    <span class="smallHeading gray"><%= @listing.min_to_campus %> min. to campus</span><br><br>
+  </div>
+</div>  
+
+
+<div class="row">
+  <div class="small-6 columns">
+    <span class="smallHeading left alignRight"><strong># CARS: </strong><%= @listing.location.num_cars%></span><br>
+    <span class="smallHeading left alignRight"><strong>CAR TYPES: </strong><%= @listing.location.car_type%><br>
+  </div>
+  <div class="small-6 columns">
+    <span class="smallHeading right alignRight"><strong>ADDITIONAL RATES</strong><br>
+    <span class="smallHeading right alignRight">$<%= @listing.full_day %> HALF-DAY<br>
+    <span class="smallHeading right alignRight">$<%= @listing.week %> HALF-DAY<br>
+    <span class="smallHeading right alignRight">$<%= @listing.month %> HALF-DAY<br>
+  </div>
+</div>
