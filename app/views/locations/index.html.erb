@@ -1,26 +1,26 @@
-<h2>My Locations</h2>
 
-<div class="locationContent">
+<div class="row">
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns">
+    <%= link_to 'New Location', new_location_path, class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
 
-<ul class = "no-bullet">
-    <% @locations.each do |location| %>
-            <%= link_to location do %> 
-            <div class="locationContainer" >
-            <img>  <%= image_tag location.photo_url(:thumb) if location.photo? %> </img>
-            <h6 ><%= location.street_address %></h6>
-            <p><%= location.city %></p>   
-            </div>        
-            <%end%>
-          
-    <%end%>
-
-
-</ul>
-
-
-
-<%= link_to 'New Location', new_location_path%>
-
+<% @locations.each do |location| %>
+<div class="row">
+  <div class="small-5 columns">
+    <% unless location.photo_url.nil? %>
+        <%= link_to image_tag(location.photo_url), location_path(location) %><br /><br />
+    <% end %>
+  </div>
+  <div class="small-7 columns">
+    <span class="smallHeading"><strong><%= location.street_address %></strong><br>
+    <span class="smallSubHeading gray"><%= location.city %></span><br><br>
+    <%= link_to 'Edit', edit_location_path(location) %>
+  </div>
+  <hr>
 </div>
-<br>
+<% end %>
+
 
