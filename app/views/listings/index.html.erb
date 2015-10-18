@@ -1,41 +1,25 @@
-<h1>Listing listings</h1>
+<div class="row">
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns">
+    <%= link_to 'New Listing', new_listing_path, class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Location</th>
-      <th>Half day</th>
-      <th>Full day</th>
-      <th>Week</th>
-      <th>Month</th>
-      <th>Startdatetime</th>
-      <th>Enddatetime</th>
-      <th>Active</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.user_id %></td>
-        <td><%= listing.location_id %></td>
-        <td><%= listing.half_day %></td>
-        <td><%= listing.full_day %></td>
-        <td><%= listing.week %></td>
-        <td><%= listing.month %></td>
-        <td><%= listing.startDateTime %></td>
-        <td><%= listing.endDateTime %></td>
-        <td><%= listing.active %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @listings.each do |listing| %>
+<div class="row">
+  <div class="small-5 columns">
+    <% unless listing.location.photo_url.nil? %>
+        <%= link_to image_tag(listing.location.photo_url), listing_path(listing) %><br /><br />
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="small-7 columns">
+    <span class="smallHeading"><strong><%= listing.location.street_address %></strong><br>
+    <span class="smallSubHeading gray"><%= listing.space_type %></span><br><br>
+    <%= link_to 'Edit', edit_listing_path(listing) %>
+  </div>
+  <hr>
+</div>
+<% end %>
 
-<br>
 
-<%= link_to 'New Listing', new_listing_path %>

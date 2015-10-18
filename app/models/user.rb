@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :locations
+  has_many :listings
+  has_many :purchases
+
   validates :username, presence: true, uniqueness: { case_sensitive: false}
   validates_presence_of :password, on: :create 
   validates_presence_of :password_confirmation, on: :create 
