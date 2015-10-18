@@ -1,0 +1,20 @@
+<% @closestListings.each do |listing| %>
+<div class="row">
+  <div class="small-12 columns">
+    <div class= "overlay-container">
+      <% unless listing.location.photo_url.nil? %>
+          <%= link_to image_tag(listing.location.photo_url), detailed_listing_path(:id => listing.id) %><br />
+          <div class="overlay">$<%= listing.half_day %> HALF-DAY</div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-6 columns">
+      <span class="smallHeading left padding-left padding-top"><strong><%= listing.location.street_address %> | <%= listing.space_type %></strong><br>
+    </div>
+    <div class="small-6 columns">
+      <span class="smallHeading gray right padding-right padding-top"><%= listing.min_to_campus %> min. to campus</span><br><br>
+    </div>
+  </div>
+</div>  
+<% end %>
