@@ -30,5 +30,19 @@
     <span class="smallHeading right alignRight">$<%= @listing.month %> HALF-DAY<br>
   </div>
 </div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="small-4 columns center"></div>
+  <div class="small-4 small-centered columns center">
+    <% unless @listing.user.picture_url.nil? %>
+        <%= image_tag(@listing.user.picture_url) %><br />
+        <span class="smallHeading gray center">Hosted by <%= @listing.user.username %></span><br><br>
+    <% end %>
+  </div>
+  <div class="small-4 columns center"></div>
+</div>
 <br>
 <%= link_to "Purchase", new_purchase_url(:listing_id => @listing.id), class: "button radius expand" %>

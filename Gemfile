@@ -45,7 +45,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Picture for Location
 gem 'carrierwave'
-gem 'mini_magick', '3.8.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
