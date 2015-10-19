@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @purchase.listing_id = params[:listing_id] unless params[:listing_id].nil?
     @purchase.seller_id = Listing.find(params[:listing_id]).user_id
-    puts "THIS IS THE IDS", @purchase.listing_id, @purchase.seller_id
+    @payments = current_user.payments.collect{ |p| [p.holder_name + " ..xx" + p.card_number.last(4)] } if logged_in?
   end
 
   # GET /purchases/1/edit

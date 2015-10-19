@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
   <div class="large-3 columns"></div>
   <div class="large-3 columns"></div>
@@ -11,6 +12,29 @@
   <div class="small-5 columns">
     <% unless location.photo_url.nil? %>
         <%= link_to image_tag(location.photo_url), location_path(location) %><br /><br />
+=======
+<h1>My Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street address</th>
+      <th>Zip code</th>
+      <th>Num cars</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.street_address %></td>
+        <td><%= location.zip_code %></td>
+        <td><%= location.num_cars %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+      </tr>
+>>>>>>> 3f496cad61f4f9391c9b49d210e676d09369d6cd
     <% end %>
   </div>
   <div class="small-7 columns">
@@ -23,3 +47,7 @@
 <% end %>
 
 
+<<<<<<< HEAD
+=======
+<%= link_to 'New Location', new_location_path, class: 'button radius expand' %>
+>>>>>>> 3f496cad61f4f9391c9b49d210e676d09369d6cd
