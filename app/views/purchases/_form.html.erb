@@ -18,6 +18,9 @@
   <%= f.input :make %>
   <%= f.input :license %>
 
+  Rate
+  <%= select("Rate", "Rate", @prices) %>
+  <br>
   Payment Method
   <%= select("Payment Method", "Card", @payments) %>
 

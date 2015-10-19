@@ -16,6 +16,8 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
     @purchase.listing_id = params[:listing_id] unless params[:listing_id].nil?
+    l = Listing.find(params[:listing_id])
+    @prices = ["Half Day: $" + l.half_day.to_s, "Full Day: $" + l.full_day.to_s, "Week: $" + l.week.to_s, "Month: $" + l.month.to_s]
     @purchase.seller_id = Listing.find(params[:listing_id]).user_id
     @payments = current_user.payments.collect{ |p| [p.holder_name + " ..xx" + p.card_number.last(4)] } if logged_in?
   end
