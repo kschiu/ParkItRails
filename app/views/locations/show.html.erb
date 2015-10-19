@@ -1,34 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Street address:</strong>
-  <%= @location.street_address %>
-</p>
+  <div class="small-3 columns">
+    <%= link_to 'Back', locations_path, class: 'button tiny radius secondary right' %>
+  </div>
+  <div class="small-3 columns">
+    <%= link_to 'Edit', edit_location_path(@location), class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
 
-<p>
-  <strong>City:</strong>
-  <%= @location.city %>
-</p>
 
-<p>
-  <strong>State:</strong>
-  <%= @location.state %>
-</p>
+<div class = "row">
+  <div class ="small-12 columns">
+    <%= image_tag @location.photo_url() if @location.photo? %> 
+  </div>
+</div>
 
-<p>
-  <strong>Zip code:</strong>
-  <%= @location.zip_code %>
-</p>
+<div class = "row">
+  <div class = "small-12 columns">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Num cars:</strong>
-  <%= @location.num_cars %>
-</p>
+    <p>
+      <strong>Street address:</strong>
+      <%= @location.street_address %>
+    </p>
 
-<p>
-  <strong>Car type:</strong>
-  <%= @location.car_type %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @location.city %>
+    </p>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+    <p>
+      <strong>State:</strong>
+      <%= @location.state %>
+    </p>
+
+    <p>
+      <strong>Zip code:</strong>
+      <%= @location.zip_code %>
+    </p>
+
+    <p>
+      <strong>Num cars:</strong>
+      <%= @location.num_cars %>
+    </p>
+
+    <p>
+      <strong>Car type:</strong>
+      <%= @location.car_type %>
+    </p>
+
+  </div>
+
+</div>
+
+
+

@@ -1,28 +1,25 @@
-<h1>My Locations</h1>
+<div class="row">
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns"></div>
+  <div class="large-3 columns">
+    <%= link_to 'New Location', new_location_path, class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
 
-<table>
-  <thead>
-    <tr>
-      <th>Street address</th>
-      <th>Zip code</th>
-      <th>Num cars</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.street_address %></td>
-        <td><%= location.zip_code %></td>
-        <td><%= location.num_cars %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-      </tr>
+<% @locations.each do |location| %>
+<div class="row">
+  <div class="small-5 columns">
+    <% unless location.photo_url.nil? %>
+        <%= link_to image_tag(location.photo_url), location_path(location) %><br /><br />
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="small-7 columns">
+    <span class="smallHeading"><strong><%= location.street_address %></strong><br>
+    <span class="smallSubHeading gray"><%= location.city %></span><br><br>
+    <%= link_to 'Edit', edit_location_path(location) %>
+  </div>
+  <hr>
+</div>
+<% end %>
 
-<br>
 
-<%= link_to 'New Location', new_location_path, class: 'button radius expand' %>
