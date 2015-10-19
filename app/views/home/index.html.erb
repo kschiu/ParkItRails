@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <% @closestListings.each do |listing| %>
 <div class="row">
   <div class="small-12 columns">
@@ -10,7 +11,7 @@
   </div>
   <div class="row">
     <div class="small-6 columns">
-      <span class="smallHeading left padding-left padding-top"><strong><%= listing.location.street_address %> | <%= listing.space_type %></strong><br>
+      <span class="smallHeading left padding-left padding-top"><strong><%= link_to listing.location.street_address + " | " + listing.space_type, detailed_listing_path(:id => listing.id) %></strong><br>
     </div>
     <div class="small-6 columns">
       <span class="smallHeading gray right padding-right padding-top"><%= listing.min_to_campus %> min. to campus</span><br><br>

@@ -1,5 +1,5 @@
 class Purchase < ActiveRecord::Base
-	after_create :deactivate_listing
+	after_save :deactivate_listing
 
 	belongs_to :user
 	belongs_to :listing
@@ -9,6 +9,8 @@ class Purchase < ActiveRecord::Base
 
 	private
 	def deactivate_listing
-		self.listing.active = false
+		listing = Listing.find(self.listing_id)
+		listing.active = false
+		listing.save
 	end
 end

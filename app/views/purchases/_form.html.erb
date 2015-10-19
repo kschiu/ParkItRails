@@ -1,7 +1,7 @@
-<%= form_for(@purchase) do |f| %>
+<%= simple_form_for(@purchase, html: { class: 'form-horizontal' }) do |f| %>
   <% if @purchase.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
       <ul>
       <% @purchase.errors.full_messages.each do |message| %>
@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :listing_id %><br>
-    <%= f.number_field :listing_id %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
+  <%= f.input :listing_id, :as => :hidden %>
+  <%= f.input :seller_id, :as => :hidden %>
+  <%= f.input :date %>
+  <%= f.input :model %>
+  <%= f.input :make %>
+  <%= f.input :license %>
+
+  Payment Method
+  <%= select("Payment Method", "Card", @payments) %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button radius small expand'%>
   </div>
 <% end %>

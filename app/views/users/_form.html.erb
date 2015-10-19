@@ -1,9 +1,17 @@
-<%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_nested_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
 
   <%= f.input :username %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
   <%= f.input :email %>
+  <div class="field">
+  	<%= f.label :picture %><br>
+  	<%= f.file_field :picture %>
+  </div>
+
+  <%= f.simple_fields_for :payments do |payments_form| %>
+    <%= render "payments_form", :f => payments_form %>
+  <% end %> 
   
   <div class="form-actions">
     <%= f.submit nil, class: 'button radius small expand' %>

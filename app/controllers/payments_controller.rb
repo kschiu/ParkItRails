@@ -25,6 +25,7 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    @payment.user_id = current_user.id if logged_in?
 
     respond_to do |format|
       if @payment.save

@@ -30,3 +30,5 @@
     <span class="smallHeading right alignRight">$<%= @listing.month %> HALF-DAY<br>
   </div>
 </div>
+<br>
+<%= link_to "Purchase", new_purchase_url(:listing_id => @listing.id), class: "button radius expand" %>
