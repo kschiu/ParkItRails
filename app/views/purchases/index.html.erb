@@ -1,20 +1,15 @@
 <h1>Purchased Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Purchase Date</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @purchases.each do |purchase| %>
-      <tr>
-        <td><%= purchase.date %></td>
-        <td><%= link_to 'Show', purchase %></td>
-      </tr>
+<% @purchases.each do |purchase| %>
+<div class="row">
+  <div class="small-5 columns">
+    <% unless purchase.listing.location.photo_url.nil? %>
+        <%= link_to image_tag(purchase.listing.location.photo_url), listing_path(purchase.listing) %><br /><br />
     <% end %>
-  </tbody>
-</table>
-
+  </div>
+  <div class="small-7 columns">
+    <span class="smallHeading"><strong><%= link_to purchase.listing.location.street_address, purchase.listing %></strong><br>
+    <span class="smallSubHeading gray"><%= purchase.listing.space_type %></span><br><br>
+  </div>
+  <hr>
+</div>
+<% end %>
