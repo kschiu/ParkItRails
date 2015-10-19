@@ -15,6 +15,9 @@ class PurchasesController < ApplicationController
   # GET /purchases/new
   def new
     @purchase = Purchase.new
+    @purchase.listing_id = params[:listing_id] unless params[:listing_id].nil?
+    @purchase.seller_id = Listing.find(params[:listing_id]).user_id
+    puts "THIS IS THE IDS", @purchase.listing_id, @purchase.seller_id
   end
 
   # GET /purchases/1/edit
@@ -69,6 +72,6 @@ class PurchasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def purchase_params
-      params.require(:purchase).permit(:buyer_id, :seller_id, :listing_id, :date)
+      params.require(:purchase).permit(:buyer_id, :seller_id, :listing_id, :date, :make, :model, :license)
     end
 end

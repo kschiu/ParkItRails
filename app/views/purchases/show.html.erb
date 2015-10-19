@@ -1,23 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Buyer:</strong>
-  <%= @purchase.buyer_id %>
-</p>
-
-<p>
-  <strong>Seller:</strong>
-  <%= @purchase.seller_id %>
-</p>
-
-<p>
-  <strong>Listing:</strong>
-  <%= @purchase.listing_id %>
-</p>
-
-<p>
   <strong>Date:</strong>
   <%= @purchase.date %>
+</p>
+
+
+<p>
+  <strong>Model:</strong>
+  <%= @purchase.model %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @purchase.make %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @purchase.license %>
 </p>
 
 <%= link_to 'Edit', edit_purchase_path(@purchase) %> |
