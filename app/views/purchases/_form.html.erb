@@ -18,6 +18,9 @@
   <%= f.input :make %>
   <%= f.input :license %>
 
+  Payment Method
+  <%= select("Payment Method", "Card", @payments) %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
