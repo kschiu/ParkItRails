@@ -4,6 +4,10 @@
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
   <%= f.input :email %>
+  <div class="field">
+  	<%= f.label :photo %><br>
+  	<%= f.file_field :photo %>
+  </div>
   
   <div class="form-actions">
     <%= f.submit nil, class: 'button radius small expand' %>
