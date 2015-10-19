@@ -1,10 +1,21 @@
 <div class="row">
+
+  <div class="small-3 columns">
+    <%= link_to 'Back', detailed_listing_path, class: 'button tiny radius secondary right' %>
+  </div>
+  <div class="small-3 columns">
+    <%= link_to 'Edit', edit_user_path(@user), class: 'button tiny radius secondary right' %>
+  </div>
+</div>  
+
+
+
+<div class="row">
   <div class = "small-5 columns">
       <%= image_tag @user.picture_url() if @user.picture? %> 
   </div>
 
   <div class = "small-7 columns">
-      <p id="notice"><%= notice %></p>
 
     <p>
       <strong><%= @user.username %></strong>
@@ -15,17 +26,31 @@
       <%= @user.email %>
     </p>
 
-        <p>
-    <strong>Card Number :</strong>
+    <p>
+      <strong>Card Number :</strong>
       <%= @payments[0].card_number %>
     </p>
 
+    <p>
+      <strong>Card type :</strong>
+      <%= @payments[0].card_type %>
+    </p>
 
+    <p>
+      <strong>Holder name:</strong>
+      <%= @payments[0].holder_name %>
+    </p>    
+
+    <p>
+      <strong>Expiration Date</strong>
+      <%= @payments[0].expiration_date %>
+    </p>
+    
+    <p>
+      <strong>Security Code:</strong>
+      <%= @payments[0].security_code %>
+    </p> 
   </div>
+
+
 </div>
-
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
