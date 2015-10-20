@@ -13,11 +13,11 @@
 
     <%= f.input :location_id, collection: @myLocs, prompt: "Select Location..." %>
     <%= f.input :space_type, collection: [['Street','Street'],['Driveway','Driveway'], ['Garage', 'Garage']], prompt: "Select space type..." %>
-    <%= f.input :half_day, label: "Half-Day Rate ($)" %>
-    <%= f.input :full_day, label: "Day Rate ($)" %>
-    <%= f.input :week, label: "Week Rate ($)" %>
-    <%= f.input :month, label: "Month Rate ($)" %>
-    <%= f.input :min_to_campus %>
+    <%= f.input :half_day, label: "Half-Day Rate ($)", input_html: { min: '0', step: 'any' } %>
+    <%= f.input :full_day, label: "Day Rate ($)", input_html: { min: '0', step: 'any' } %>
+    <%= f.input :week, label: "Week Rate ($)", input_html: { min: '0', step: 'any' } %>
+    <%= f.input :month, label: "Month Rate ($)", input_html: { min: '0', step: 'any' } %>
+    <%= f.input :min_to_campus, input_html: { min: '0', step: 'any' } %>
     <%= f.input :startDateTime, label: "Start Date and Time" %>
     <%= f.input :endDateTime, label: "End Date and Time"%>
     <%= f.input :active %><br>
