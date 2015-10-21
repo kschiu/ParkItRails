@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
-    @myLocs = Location.where(current_user.id).collect{ |u| [u.street_address, u.id] } if logged_in?
+    @myLocs = Location.where(user_id: current_user.id).collect{ |u| [u.street_address, u.id] } if logged_in?
   end
 
   # GET /listings/1/edit
