@@ -1,4 +1,6 @@
-<% if @purchases %>
+<% if @purchases.length == 0 %>
+<h3> You have no purchases!</h3>
+<% else %>
 <h1>Purchased Listings</h1>
 <% @purchases.each do |purchase| %>
 <div class="row">
@@ -14,6 +16,4 @@
   <hr>
 </div>
 <% end %>
-<% else %>
-<h3> You have no purchases!</h3>
 <% end %>

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<% if @closestListings%>
+<% if @closestListings.length == 0%>
+<h3>There are no listings in the area</h3>
+<% else %>
 <% @closestListings.each do |listing| %>
 <div class="row">
   <div class="small-12 columns">
@@ -21,6 +23,4 @@
 </div>  
 <br>
 <% end %>
-<% else %>
-<h3>There are no listings in the area</h3>
 <% end %>  
