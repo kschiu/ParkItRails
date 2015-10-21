@@ -6,7 +6,7 @@
   def index
     @locations = Location.all
     if logged_in?
-      @my_locations = Location.where(user_id: current_user.id)
+      @locations = Location.where(user_id: current_user.id)
     end
   end
 
