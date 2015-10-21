@@ -1,3 +1,4 @@
+<% if @purchases %>
 <h1>Purchased Listings</h1>
 <% @purchases.each do |purchase| %>
 <div class="row">
@@ -12,4 +13,7 @@
   </div>
   <hr>
 </div>
+<% end %>
+<% else %>
+<h3> You have no purchases!</h3>
 <% end %>

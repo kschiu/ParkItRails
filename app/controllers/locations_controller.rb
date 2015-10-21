@@ -4,10 +4,7 @@
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
-    if logged_in?
-      @my_locations = Location.where(user_id: current_user.id)
-    end
+    @locations = Location.where(user_id: current_user.id)
   end
 
   # GET /locations/1
